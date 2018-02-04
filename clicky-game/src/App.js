@@ -26,7 +26,7 @@ class App extends Component {
         </p>
         <Wrapper>
         {this.state.cards.map(picture => (
-          <pictureCard
+          <PictureCard
             shufflePicture={this.shufflePicture}
             id={picture.id}
             key={picture.id} // to get rid of unique key prop warning
