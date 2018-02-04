@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import PictureCard from "./components/PictureCard";
+import Wrapper from "./components/Wrapper";
+import cards from "./cards.json";
 
 class App extends Component {
     // Setting this.state.friends to the friends json array
