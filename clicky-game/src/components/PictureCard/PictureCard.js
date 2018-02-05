@@ -4,7 +4,7 @@ import "./PictureCard.css";
 const PictureCard = props => (
   <div className="card">
     <div className="img-container">
-      <img alt={props.name} src={props.image} onClick={() => props.shufflePicture(props.id)}/>
+      <img className="img-thumbnail img-responsive" alt={props.name} src={props.image} onClick={() => props.clickPicture(props.id)}/>
     </div>
   </div>
 );

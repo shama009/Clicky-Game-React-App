@@ -20,6 +20,8 @@
 
 .App-intro {
   font-size: large;
+  padding: 20px;
+  color: darkblue;
 }
 
 @keyframes App-logo-spin {
