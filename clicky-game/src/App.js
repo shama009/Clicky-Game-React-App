@@ -11,7 +11,8 @@ class App extends Component {
     cards,
     clickedArray: [],
     topScore: 0,
-    score: 0
+    score: 0,
+    message: ""
   };
   clickPicture = id => {
     console.log(this.state.clickedArray)
@@ -20,12 +21,13 @@ class App extends Component {
     this.setState({cards: shuffledArray});
     // if clicked an image already clicked set this.state.score = 0; empty clickeadArray, end of if block
     if (this.state.clickedArray.includes(id)) {
-      this.setState({ score: 0, clickedArray: [] });
+      this.setState({ score: 0, clickedArray: [], message: "Incorrect!! ☹️"});
     }
     else {
       this.setState({
         clickedArray: this.state.clickedArray.concat([id]),
-        score: this.state.score + 1
+        score: this.state.score + 1,
+        message: "Correct!! 🙂"
       });
     }
     // set topscore = score if score>topscore.
@@ -48,9 +50,11 @@ class App extends Component {
           <h1 className="App-title">Welcome to React Clicky Game!!</h1>
         </header>
         <p className="App-intro">
-          <strong>Click on an image to earn points, but don't click on any, more than once!  Score: {this.state.score} | TopScore: {this.state.topScore}</strong>
+          <strong>Click on an image to earn points, but don't click on any, more than once!</strong> 
+          <p className = "score"><strong>Score: {this.state.score} | TopScore: {this.state.topScore}</strong></p>
+          <p className="message"><strong>{this.state.message}</strong></p>
         </p>
-        <Wrapper>
+        <Wrapper className="container-fluid">
           {this.state.cards.map(picture => (
             <PictureCard
               clickPicture={this.clickPicture}
@@ -61,6 +65,11 @@ class App extends Component {
             />
           ))}
         </Wrapper>
+        <footer className="footer">
+      <div className="container">
+        <span className="text-muted">&copy;Clicky Game - React app.</span>
+      </div>
+    </footer> 
       </div>
     );
   }
