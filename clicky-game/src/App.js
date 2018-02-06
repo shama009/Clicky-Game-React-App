@@ -15,7 +15,6 @@ class App extends Component {
     message: ""
   };
   clickPicture = id => {
-    console.log(this.state.clickedArray)
     // Arrange the pictures in a random manner
     const shuffledArray = this.shuffleArray(cards);
     this.setState({cards: shuffledArray});

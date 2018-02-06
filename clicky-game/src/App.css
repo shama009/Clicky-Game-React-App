@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4fRGuSIc0Nf-x_Kl8abu9mE6FfnpIiyvYZCcQolljVvtujEP6");
 }
 
 .App-logo {
@@ -25,6 +26,7 @@
 }
 
 .footer {
+  margin-top: 20px;
   background-color: rgb(24, 21, 21);
   color: white;
 }
