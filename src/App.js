@@ -12,7 +12,8 @@ class App extends Component {
     clickedArray: [],
     topScore: 0,
     score: 0,
-    message: ""
+    message: "",
+    shakeit: "false"
   };
   clickPicture = id => {
     // Arrange the pictures in a random manner
@@ -20,19 +21,21 @@ class App extends Component {
     this.setState({cards: shuffledArray});
     // if clicked an image already clicked set this.state.score = 0; empty clickeadArray, end of if block
     if (this.state.clickedArray.includes(id)) {
-      this.setState({ score: 0, clickedArray: [], message: "Incorrect!! ☹️"});
+      this.setState({ score: 0, clickedArray: [], message: "Incorrect!! Game Over ☹️ Click an image to start again!", shakeit: "true"});
     }
     else {
       this.setState({
         clickedArray: this.state.clickedArray.concat([id]),
         score: this.state.score + 1,
-        message: "Correct!! 🙂"
+        message: "Correct!! 🙂",
+        shakeit: "false"
       });
     }
     // set topscore = score if score>topscore.
     if (this.state.score > this.state.topScore) {
       this.setState({ topScore: this.state.score });
     }
+    // shake the wrapper if shakeit is set to true
   }
   shuffleArray = (picturesArray) => {
       for (let i = picturesArray.length - 1; i > 0; i--) {
@@ -48,12 +51,14 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React Clicky Game!!</h1>
         </header>
-        <p className="App-intro">
+        <h3 className="App-intro">
           <strong>Click on an image to earn points, but don't click on any, more than once!</strong> 
           <p className = "score"><strong>Score: {this.state.score} | TopScore: {this.state.topScore}</strong></p>
           <p className="message"><strong>{this.state.message}</strong></p>
-        </p>
-        <Wrapper className="container-fluid">
+        </h3>
+        <Wrapper
+        shakeWrapper = {this.state.shakeit}
+        pictures=
           {this.state.cards.map(picture => (
             <PictureCard
               clickPicture={this.clickPicture}
@@ -63,7 +68,7 @@ class App extends Component {
               image={picture.image}
             />
           ))}
-        </Wrapper>
+        />
         <footer className="footer">
       <div className="container">
         <span className="text-muted">&copy;Clicky Game - React app.</span>
