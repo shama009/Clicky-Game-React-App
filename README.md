@@ -7,6 +7,8 @@ Components state is managed to respond to user events.
 3. Every time an image is clicked, the images rendered to the page shuffle themselves in a random order.
 4. Once the user's score is reset after an incorrect guess, the game restarts.
 
+Game is deployed to heroku. Here is the link [clicky-game](http://clicky-game-react-app.herokuapp.com/)
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
