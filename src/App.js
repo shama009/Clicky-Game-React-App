@@ -71,7 +71,7 @@ class App extends Component {
         />
         <footer className="footer">
       <div className="container">
-        <span className="text-muted">&copy;Clicky Game - React app.</span>
+        <span className="text-muted">&copy;Shama - Clicky Game - React app.</span>
       </div>
     </footer> 
       </div>
